@@ -1,4 +1,14 @@
 # Xcode
+- task: FtpUpload@2
+  inputs:
+    credentialsOption: 'serviceEndpoint'
+    rootDirectory: 'Artem'
+    filePatterns: '**'
+    remoteDirectory: 'Artem/upload/$(Build.BuildId)/'
+    enableUtf8: true
+    clean: true
+    preservePaths: true
+    trustSSL: true
 # Build, test, and archive an Xcode workspace on macOS.
 # Add steps that install certificates, test, sign, and distribute an app, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/xcode
